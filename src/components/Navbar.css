@@ -1,0 +1,99 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+
+.search-input {
+    width: 200px;
+    padding: 8px;
+    border: 2px solid #fff;
+    background-color: #222;
+    color: #fff;
+    border-radius: 4px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+.search-input:focus {
+    border-color: #f0f0f0;
+}
+
+.size-6 {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Profile icon */
+.profile-icon {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.profile-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Logout button styling */
+.logout-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Login button styling */
+.login-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
