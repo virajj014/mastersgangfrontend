@@ -10,7 +10,7 @@
 }
 
 /* Form styling */
-form {
+.signup-page form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +22,10 @@ form {
 }
 
 /* Input field styling */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+.signup-page input[type="text"],
+.signup-page input[type="email"],
+.signup-page input[type="password"],
+.signup-page select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -33,31 +33,30 @@ select {
     background-color: inherit;
     color: #fff;
     border-radius: 4px;
-    box-sizing: border-box;
 
 }
 
 
-input[type="email"] {
+.signup-page input[type="email"] {
     margin-bottom: 0px;
 }
 
-input[type="text"]::placeholder,
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
+.signup-page input[type="text"]::placeholder,
+.signup-page input[type="email"]::placeholder,
+.signup-page input[type="password"]::placeholder {
     color: #ccc;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-select:focus {
+.signup-page input[type="text"]:focus,
+.signup-page input[type="email"]:focus,
+.signup-page input[type="password"]:focus,
+.signup-page select:focus {
     outline: none;
     border-color: #f0f0f0;
 }
 
 /* OTP section: container for email input and send OTP button */
-.email-otp-container {
+.signup-page .email-otp-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +87,7 @@ select:focus {
 }
 
 /* Signup button */
-button[type="submit"] {
+.signup-page button[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #fff;
@@ -98,7 +97,7 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.signup-page button[type="submit"]:hover {
     background-color: #f0f0f0;
 }
 

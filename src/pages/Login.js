@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Login.css';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -9,13 +10,39 @@ const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
+    const [loading, setLoading] = useState(false); // Loading state for button
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        //handle backend api logic
-        const userData = { email, role: 'student' }; // or 'teacher'
-        login(userData);
-        navigate('/');
+        if (!email || !password) {
+            toast.error("Email and Password are required!");
+            return;
+        }
+        setLoading(true);
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+                credentials: 'include', // Include cookies (for auth token)
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                toast.success('Logged in successfully');
+                login(data.data); // Log in the user (store tokens, etc.)
+                navigate('/');
+            } else {
+                toast.error(data.message || 'Login failed');
+            }
+        } catch (error) {
+            toast.error('An error occurred during login');
+        } finally {
+            setLoading(false);
+        }
+
     }
 
 
